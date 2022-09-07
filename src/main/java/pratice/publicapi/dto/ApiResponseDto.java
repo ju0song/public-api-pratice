@@ -10,5 +10,5 @@ import lombok.*;
 @Builder
 public class ApiResponseDto {
     private String PRDUCT;
-    private String ENTRPS;
+    private String DISTB_PD;
 }

@@ -18,7 +18,7 @@ public class Api {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
-    private String ENTRPS;
+    private String DISTB_PD;
     @Column
     private String PRDUCT;
 

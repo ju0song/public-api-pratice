@@ -22,11 +22,15 @@ public class Api {
 
     @Column
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    private String DISTB_PD;
+    private String ENTRPS;
 
     @Column
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String PRDUCT;
+
+    @Column
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private String SRV_USE;
 
 
 }

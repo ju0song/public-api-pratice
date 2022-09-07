@@ -19,7 +19,7 @@ public class ApiService {
             JSONObject Object;
             //json 객체 생성
             JSONParser jsonParser = new JSONParser();
-            //json 파싱 객체 생성
+            //json 파싱 객체 생성ㅇ
             JSONObject jsonObject = (JSONObject) jsonParser.parse(result.toString());
 
             //데이터 분해
@@ -29,11 +29,11 @@ public class ApiService {
                 Object = (JSONObject) o;
                 String product = Object.get("PRDUCT").toString();
                 if(product ==null){
-                    product ="";
+                    product =null;
                 }
                 String distb_pd = Object.get("DISTB_PD").toString();
                 if(distb_pd ==null){
-                    distb_pd ="";
+                    distb_pd =null;
                 }
 
                 Api api = Api.builder()

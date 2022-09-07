@@ -1,5 +1,6 @@
 package pratice.publicapi.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,10 +17,15 @@ import javax.persistence.*;
 public class Api {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
+
     @Column
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String DISTB_PD;
+
     @Column
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String PRDUCT;
 
 

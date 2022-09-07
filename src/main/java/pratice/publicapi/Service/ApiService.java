@@ -28,7 +28,13 @@ public class ApiService {
             for (java.lang.Object o : array) {
                 Object = (JSONObject) o;
                 String product = Object.get("PRDUCT").toString();
+                if(product ==null){
+                    product ="";
+                }
                 String distb_pd = Object.get("DISTB_PD").toString();
+                if(distb_pd ==null){
+                    distb_pd ="";
+                }
 
                 Api api = Api.builder()
                         .DISTB_PD(distb_pd)

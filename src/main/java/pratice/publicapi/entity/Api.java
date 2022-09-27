@@ -1,36 +1,32 @@
 package pratice.publicapi.entity;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.sun.istack.NotNull;
+import lombok.*;
 
 import javax.persistence.*;
 
-
+@Entity
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+
 public class Api {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column
-    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @Column(length=500)
+    @NotNull
     private String ENTRPS;
 
-    @Column
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    private String PRDUCT;
+    @Column(length=500)
+    @NotNull
+    private String PRODUCT;
 
-    @Column
-    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @Column(length=500)
+    @NonNull
+
     private String SRV_USE;
-
 
 }

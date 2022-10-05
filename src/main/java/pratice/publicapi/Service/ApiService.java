@@ -29,9 +29,12 @@ public class ApiService {
 
     //공공API 데이터 DB 저장
     public String parsing() throws IOException, NullPointerException {
+
+
+
         StringBuilder result = null;
 
-        for (int pageNumber = 1; pageNumber <=354; pageNumber++) {
+        for (int pageNumber = 1; pageNumber <=24; pageNumber++) {
             String urla = "http://apis.data.go.kr/1471000/HtfsInfoService2/getHtfsItem?"
                     + "ServiceKey=AEwuEzexgJKaPYcUDyX8Z5ZLxbtExL6%2FnS5eaQp6%2Bq7sD%2BEIyFWTgMwUW1qkvL9ZTs30dx5H1xsZyOzFP9bNyA%3D%3D"
                     + "&numOfRows=" + 99
@@ -40,7 +43,7 @@ public class ApiService {
 
             URL url = new URL(urla);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-            urlConnection.setConnectTimeout(30000);
+            urlConnection.setConnectTimeout(3000);
             urlConnection.setReadTimeout(80000);
             urlConnection.setRequestMethod("GET");
             BufferedReader br;
@@ -81,13 +84,14 @@ public class ApiService {
                     if (srv_use == null) {
                         srv_use = "";
                     }
+
                     List<Api> apis = new ArrayList<>();
                     Api api = Api.builder()
                             .ENTRPS(entrps)
                             .PRODUCT(product)
                             .SRV_USE(srv_use)
                             .build();
-                            apis.add(api);
+                    apis.add(api);
                     apiRepository.saveAll(apis);
 
                 }

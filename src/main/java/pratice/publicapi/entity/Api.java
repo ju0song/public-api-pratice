@@ -17,11 +17,12 @@ public class Api {
     private Long id;
 
     @Column(length=500)
-    @NotNull
+
     private String ENTRPS;
 
     @Column(length=500)
     @NotNull
+
     private String PRODUCT;
 
     @Column(length=500)

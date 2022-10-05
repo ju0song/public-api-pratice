@@ -23,7 +23,10 @@ public class ApiController {
     //공공API 데이터 DB 저장
     @GetMapping("/api")
     public ResponseEntity<String> parse() throws IOException, NullPointerException {
+        long start = System.currentTimeMillis();
         apiService.parsing();
+        long end = System.currentTimeMillis(); // 끝나는 시점 측정
+        System.out.println( "실행 시간 : " + ( end - start ) +"ms");
         return ResponseEntity.status(HttpStatus.OK)
                 .body("공공 데이터가 담겼습니다");
     }
